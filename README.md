@@ -22,5 +22,7 @@
 3. cd INTO THE FOLDER "graphQL-goodreads"
 4. TYPE: npm install
 5. TYPE: npm install --save express
+6. TYPE: npm install --save express-graphql
+6. TYPE: npm install --save graphql
 
 * Copyright (c) 2017, **_{Justin Gomez}_**

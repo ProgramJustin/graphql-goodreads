@@ -11,9 +11,12 @@
 
 
 ### TECHNOLOGIES USED
-* node.js
+* node.js version 8 or higher.
+* npm
 * express.js
 * JavaScript
+* GraphQL
+
 
 
 ### COMPLETE SET-UP INSTRUCTIONS

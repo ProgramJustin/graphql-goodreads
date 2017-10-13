@@ -2,13 +2,16 @@
 const fetch = require('node-fetch')
 // convert call back to a promise
 const util = require('util')
-// module xml2js
-util.promisify(require('xml2js').parseString)
+// module xml2js coverts xml to json
+// const parseXML = util.promisify(require('xml2js').parseString)
+const parseXML = require('xml2js').parseString
 
 // xml response
 const x = fetch(
-  'http://www.goodreads.com/author/show.xml?id=4432&key=risKm8wwXsIcyEiTktvA'
+  'https://reqres.in/api/users?page=2'
 )
-.then(response => response.text())
+.then(response => response.text()
+)
+.then(parseXML)
 x
 console.log(x)

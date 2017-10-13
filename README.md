@@ -23,6 +23,9 @@
 4. TYPE: npm install
 5. TYPE: npm install --save express
 6. TYPE: npm install --save express-graphql
-6. TYPE: npm install --save graphql
+7. TYPE: npm install --save graphql
+8. TYPE: npm install --save xml2js
+9. TYPE: npm install --save node-fetch
+10. TYPE: npm install --save util
 
 * Copyright (c) 2017, **_{Justin Gomez}_**

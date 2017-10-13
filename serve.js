@@ -1,6 +1,6 @@
 const express = require('express')
-// create graphql endpoint
-// express plugin or tool is used for this right below.
+
+// module provides a simple way to create an Express server that runs a GraphQL API.
 const graphqlHTTP = require('express-graphql')
 const app = express()
 

@@ -3,8 +3,8 @@ const fetch = require('node-fetch')
 // convert call back to a promise
 const util = require('util')
 // module xml2js coverts xml to json
-// const parseXML = util.promisify(require('xml2js').parseString)
-const parseXML = require('xml2js').parseString
+const parseXML = util.promisify(require('xml2js').parseString)
+// const parseXML = require('xml2js').parseString
 
 // xml response
 const x = fetch(
@@ -14,4 +14,20 @@ const x = fetch(
 )
 .then(parseXML)
 x
-console.log(x)
+
+
+module.exports = new GraphQLSchema({
+  query: new GraphQLObjectType({
+    name: 'Query',
+    description: '...',
+
+    fields: () => ({
+      users: {
+        type: UserType;
+        args: {
+          id: { type: GraphQLInt }
+        }
+      }
+    })
+  })
+})

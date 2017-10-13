@@ -12,22 +12,14 @@ const {
   GraphQLString
 } = require('graphql')
 
-
-// xml response
-const x = fetch(
-  'https://reqres.in/api/users'
-)
-.then(response => response.text()
-)
-.then(parseXML)
-
-x
 const UserType = new GraphQLObjectType({
   name: 'User',
   description: '...',
   fields: () => ({
     name: {
-      type: GraphQLString
+      type: GraphQLString,
+      resolve: res =>
+      res.data[0].name
     }
   })
 })
@@ -42,7 +34,11 @@ module.exports = new GraphQLSchema({
         args: {
           id: { type: GraphQLInt }
         },
-        
+        resolve: (root, args) => fetch(
+          'https://reqres.in/api/users${args.id}'
+        )
+        .then(response => response.json())
+        // .then(parseXML)
       }
     })
   })
